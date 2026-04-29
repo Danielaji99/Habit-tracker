@@ -1,0 +1,156 @@
+@import "tailwindcss";
+
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap");
+
+:root {
+    --color-bg: #f5f4f0;
+    --color-surface: #ffffff;
+    --color-surface-alt: #faf9f6;
+    --color-border: #e4e2db;
+    --color-border-strong: #ccc9be;
+    --color-text-primary: #1a1917;
+    --color-text-secondary: #6b6860;
+    --color-text-muted: #9c9a94;
+    --color-accent: #2d6a4f;
+    --color-accent-light: #d8f3dc;
+    --color-accent-hover: #245e44;
+    --color-danger: #c0392b;
+    --color-danger-light: #fdecea;
+    --color-warning: #d4a017;
+    --color-streak: #e07b39;
+    --color-streak-light: #fdf0e7;
+    --shadow-sm:
+        0 1px 3px rgba(26, 25, 23, 0.06), 0 1px 2px rgba(26, 25, 23, 0.04);
+    --shadow-md:
+        0 4px 12px rgba(26, 25, 23, 0.08), 0 2px 4px rgba(26, 25, 23, 0.04);
+    --shadow-lg:
+        0 12px 32px rgba(26, 25, 23, 0.1), 0 4px 8px rgba(26, 25, 23, 0.06);
+    --radius: 12px;
+    --radius-lg: 16px;
+    --radius-xl: 24px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "DM Sans", sans-serif;
+    background-color: var(--color-bg);
+    color: var(--color-text-primary);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.font-display {
+    font-family: "DM Serif Display", serif;
+}
+
+input,
+textarea,
+select {
+    font-family: "DM Sans", sans-serif;
+}
+
+:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+}
+
+button,
+a,
+input,
+select,
+textarea {
+    transition: all 0.15s ease;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background: var(--color-border-strong);
+    border-radius: 3px;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse-green {
+    0%,
+    100% {
+        box-shadow: 0 0 0 0 rgba(45, 106, 79, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 0 8px rgba(45, 106, 79, 0);
+    }
+}
+
+.animate-fade-up {
+    animation: fadeUp 0.4s ease forwards;
+}
+.animate-fade-in {
+    animation: fadeIn 0.3s ease forwards;
+}
+.animate-slide-down {
+    animation: slideDown 0.3s ease forwards;
+}
+
+.habit-card-enter {
+    animation: fadeUp 0.35s ease forwards;
+}
+
+.stagger > *:nth-child(1) {
+    animation-delay: 0.05s;
+    opacity: 0;
+}
+.stagger > *:nth-child(2) {
+    animation-delay: 0.1s;
+    opacity: 0;
+}
+.stagger > *:nth-child(3) {
+    animation-delay: 0.15s;
+    opacity: 0;
+}
+.stagger > *:nth-child(4) {
+    animation-delay: 0.2s;
+    opacity: 0;
+}
+.stagger > *:nth-child(5) {
+    animation-delay: 0.25s;
+    opacity: 0;
+}
+.stagger > * {
+    animation: fadeUp 0.4s ease forwards;
+}
